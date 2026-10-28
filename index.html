@@ -14,7 +14,7 @@
 
 	<h3>Top 5 lists</h3>
 
-	<ol>
+	<ol class="custom">
 		<li>Dieter Rams: <i>10 points design</i></li>
 
 		<li>Fischli & Weiss: <i>How to work better</i></li>
@@ -30,6 +30,24 @@
 			</ul>
 		</li>
 	</ol>
+
+	<style>
+		ol.custom {
+			list-style-type: none;
+		}
+
+		ol.custom > li {
+			counter-increment: customlistcounter;
+		}
+
+		ol.custom > li:before {
+			content: counter(customlistcounter) " — ";
+			font-weight: bold;
+		}
+		ol.custom:first-child {
+			counter-reset: customlistcounter;
+		}
+	</style>
 	
 </body>
 </html>
